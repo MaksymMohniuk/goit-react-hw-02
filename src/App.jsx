@@ -4,13 +4,11 @@ import Options from "./components/Options/Options.jsx";
 import Feedback from "./components/Feedback/Feedback.jsx";
 
 function App() {
-  const { initialFeedback, setInitialFeedback } = useState({
+  const [initialFeedback, setInitialFeedback] = useState({
     good: 0,
     neutral: 0,
     bad: 0,
   });
-
-  console.log(initialFeedback);
 
   const updateFeedback = (feedbackType) => {
     setInitialFeedback({
@@ -22,7 +20,7 @@ function App() {
   return (
     <>
       <Description />
-      <Options updateFeedback={updateFeedback} />
+      <Options handleFeedback={updateFeedback} />
       <Feedback initialFeedback={initialFeedback} />
     </>
   );

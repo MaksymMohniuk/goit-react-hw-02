@@ -1,10 +1,9 @@
 const Feedback = ({ initialFeedback }) => {
-  console.log(initialFeedback);
   return (
     <ul>
-      <li>{initialFeedback.good}</li>
-      <li>{initialFeedback.neutral}</li>
-      <li>{initialFeedback.bad}</li>
+      <li>Good: {initialFeedback.good}</li>
+      <li>Neutral: {initialFeedback.neutral}</li>
+      <li>Bad: {initialFeedback.bad}</li>
     </ul>
   );
 };
