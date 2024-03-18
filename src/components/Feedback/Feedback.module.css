@@ -1,0 +1,35 @@
+.feedbackContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.feedbackList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feedbackList li {
+  margin-bottom: 5px;
+}
+
+.feedbackList li:first-child {
+  color: green;
+}
+
+.feedbackList li:nth-child(2) {
+  color: orange;
+}
+
+.feedbackList li:nth-child(3) {
+  color: red;
+}
+
+.feedbackList li:last-child {
+  font-weight: bold;
+}
+
+.feedbackList li:nth-last-child(2) {
+  color: green;
+}

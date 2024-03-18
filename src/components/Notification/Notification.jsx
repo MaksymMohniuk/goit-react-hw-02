@@ -1,6 +1,8 @@
+import styles from "./Notification.module.css";
+
 const Notification = () => {
   return (
-    <div>
+    <div className={styles.notificationContainer}>
       <p>No feedback yet.</p>
     </div>
   );

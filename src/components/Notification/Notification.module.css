@@ -1,0 +1,9 @@
+.notificationContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.notificationContainer p {
+  font-size: 18px;
+  color: #555;
+}

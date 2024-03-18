@@ -1,0 +1,13 @@
+.descriptionContainer {
+  text-align: center;
+  margin: 20px;
+}
+
+.descriptionContainer h1 {
+  color: #333;
+}
+
+.descriptionContainer p {
+  font-size: 18px;
+  line-height: 1.5;
+}
