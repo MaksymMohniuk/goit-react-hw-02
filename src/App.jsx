@@ -13,8 +13,6 @@ function App() {
     return parsedFeedbacks;
   });
 
-  const [feedbacksVisible, setFeedbacksVisible] = useState(false);
-
   const feedbacksTotal =
     initialFeedback.good + initialFeedback.neutral + initialFeedback.bad;
 
@@ -23,16 +21,14 @@ function App() {
   );
 
   const updateFeedback = (feedbackType) => {
-    setInitialFeedback({
-      ...initialFeedback,
-      [feedbackType]: initialFeedback[feedbackType] + 1,
-    });
-    setFeedbacksVisible(true);
+    setInitialFeedback((prevFeedback) => ({
+      ...prevFeedback,
+      [feedbackType]: prevFeedback[feedbackType] + 1,
+    }));
   };
 
   const resetFeedback = () => {
     setInitialFeedback(zeroFeedback);
-    setFeedbacksVisible(false);
   };
 
   useEffect(() => {
@@ -48,14 +44,14 @@ function App() {
         feedbacksTotal={feedbacksTotal}
         positivePercentage={positivePercentage}
       />
-      {feedbacksVisible && (
+      {feedbacksTotal > 0 && (
         <Feedback
           initialFeedback={initialFeedback}
           total={feedbacksTotal}
           positivePercentage={positivePercentage}
         />
       )}
-      {!feedbacksVisible && feedbacksTotal === 0 && <Notification />}
+      {feedbacksTotal === 0 && <Notification />}
     </>
   );
 }
